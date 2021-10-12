@@ -21,7 +21,7 @@ width: 500px;
 background-color: white;
 }
 
-.restart{ /*button to restart*/
+#restart{ /*button to restart*/
 width: 20%;
 justify-self: center;
 }
