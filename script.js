@@ -25,7 +25,7 @@ function createGrid(rows, columns){
 
 let size = prompt("How many squares (<100) on each side?")
 while (size>100) {
-    let size = prompt("Listen to the instructions. How many squares (<100) on each side?")
+    let size = prompt("Read the instructions. How many squares (<100) on each side?")
     if (size<=100) {
         break;
     }
