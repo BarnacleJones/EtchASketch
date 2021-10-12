@@ -1,0 +1,25 @@
+body{
+    max-height: 80vh;
+}
+
+.hoveredOver{
+    background-color: aqua;
+}
+
+.individualSquare{
+height: 25px;
+width: 25px;
+background-color: beige;
+}
+
+
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 30%;
+    
+   
+
+
+}
