@@ -3,8 +3,10 @@
 //variables
 let container = document.querySelector(".container");
 
+
 //event listeners
-document.getElementById("restart").addEventListener("click", resetPage);
+document.getElementById("restart").addEventListener("click", resetPage = () => {window.location.reload();});
+
 //Function to create the grid for drawing
 function createGrid(rows, columns){
 
@@ -21,22 +23,11 @@ function createGrid(rows, columns){
     }
 }
 
-
-let size = prompt("How many squares (<100) on each side?")
+//initial setup
+let size = prompt("How many squares (<100) on each side?");
 while (size>100) {
     let size = prompt("Read the instructions. How many squares (<100) on each side?")
     if (size<=100) {
-        break;
-    }
-}
-
-function resetPage() {
-    for (let index = 0; index < document.querySelectorAll(".innerDiv").length; index++) {
-        const element = document.querySelectorAll(".innerDiv")[index];
-        element.style = "background-color: white";        
-    }
-}
-
-createGrid(size, size);
-
-    
+        break;        
+    }}
+createGrid(size, size)
