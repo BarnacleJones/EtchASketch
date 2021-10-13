@@ -6,11 +6,17 @@
 }
 
 body{
-    background-color: rgb(92, 89, 89);
+    background-color: rgb(34, 34, 34);
     display: grid;
-    justify-content: center;   
+    justify-content: center; 
     text-align: center; 
+    font-family: 'Shrikhand';
+    margin: 0;;
     }
+h1{
+    font-size: 3em;
+    color: rgb(161, 211, 85);
+}
 
 .container{
 display: grid;
@@ -18,10 +24,55 @@ grid-template-columns: repeat(var(--grid-cols), 1fr);
 grid-template-rows: repeat(var(--grid-cols), 1fr);   
 height: 500px;
 width: 500px;
-background-color: white;
+border: 1px black solid;
+background-color: rgb(216, 212, 212);
+margin:auto
 }
 
-#restart{ /*button to restart*/
-width: 20%;
-justify-self: center;
+
+.calculator{
+    background-color: grey;
+    opacity: .85;
+    border-radius: 30px;
+    width: 700px;
+    height: 100vh;
+    align-items: center; 
+}
+
+.settings > button{
+    width: 30%;
+    border-radius: 0%;
+    height: 4em;
+    background-color: rgb(161, 211, 85);
+    border: 2px rgb(161, 211, 85);
+    margin: 1%;
+    border-style: none;
+    color: purple;
+    font-weight: 900;
+}
+
+
+
+
+h2{
+  font-size: 2em;
+  color: rgb(161, 211, 85);
+  
+}
+
+
+
+@media (max-width: 700px){
+  .container{
+      width: 350px;
+      height: 350px;
+      
+  }
+  .calculator{
+      height: 90vh;
+      width: 95%;
+      border-radius: 20px;
+      margin-bottom: 5%;
+  }
+ 
 }

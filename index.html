@@ -7,11 +7,31 @@
     <title>Ben's Etch-A-Sketch</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <div class="calculator">
     <h1>Etch-A-Sketch!</h1>
     <div class="container"></div>
-    <br><br>
-    <button id="restart">Restart</button>
+    
+    <div class="settings">
+    
+    <button id="colorPick">Choose Colour</button>
+    <button id="rainbowPick">Rainbow ON/OFF</button>
+    <br>    
+    <button id="eraserPick">Eraser</button>
+    
+    <button id="restart">Restart / Pixel Select</button>
+    <br>
+    <h2>Pixels:<span id="demo"></span></h2>
+    <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+    
+  
+     
+
+
+</div>
 </body>
 </html>
