@@ -4,7 +4,9 @@
     let rainbow = false;
     
     //default brush colour
-    let defaultValue = `background-color: black;`
+    
+    let brush = document.getElementById("colorPick").value;
+    defaultValue = `background-color: ${brush};`
     //eraser colour
     let eraserValue = `background-color: rgb(216, 212, 212);`
     let eraser = false;
@@ -16,6 +18,7 @@
     document.getElementById("restart").addEventListener("click", resetPage = () => {window.location.reload();});
     document.getElementById("rainbowPick").addEventListener("click", rainbowToggle)
     document.getElementById("eraserPick").addEventListener("click", eraserToggle)
+    // document.getElementById("colorPick").addEventListener("")
 
 
 //Function to create the drawing screen
@@ -31,6 +34,7 @@
             element.addEventListener("mouseover", changeColour = () => {element.style = defaultValue})            
             container.appendChild(element);    
         }
+        
     }
 
 //slider code
@@ -129,3 +133,27 @@
 //initialising function
 let size = slider.value;
 createGrid(size, size)
+
+
+//need a function to determine if background colour = ==== "backgroundColor: ""
+//and then change defaultColour to those that are not allocated a background color
+//to what is chosen from color wheel
+//use a loop to go through each chile of the container and if their background color is blank
+//then reset their changecolour function to the new colour from the picker
+
+// function changeBrush()
+// {
+    
+//     // Loop to create rows/columns and attach to the grid container
+//     for (let index = 0; index < (rows*columns); index++) 
+//     {
+//         backgroundValue = 'backgroundColor: ""';
+//         if (condition) {
+            
+//         }
+//         let element = document.createElement("DIV");    
+//         element.setAttribute("class", "innerDiv");
+//         element.addEventListener("mouseover", changeColour = () => {element.style = defaultValue})            
+//         container.appendChild(element);    
+//     }
+// }
