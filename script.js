@@ -2,12 +2,14 @@
     let container = document.querySelector(".container");
     //rainbow mode off initially
     let rainbow = false;
-    //default background colour
+    
+    //default brush colour
     let defaultValue = `background-color: black;`
     //eraser colour
     let eraserValue = `background-color: rgb(216, 212, 212);`
     let eraser = false;
 
+    
 
 
 //event listeners
@@ -40,12 +42,14 @@
     // Update the current slider value (each time you drag the slider handle)
     slider.oninput = function() {output.innerHTML = this.value * this.value;} 
 
+
 //rainbow mode toggle
 
     function rainbowToggle(){
         if (rainbow) {
-            rainbow = false; 
+            rainbow = false;             
             console.log("rainbow:" + rainbow);
+            let defaultValue = `background-color: black;`
             //make a loop to make drawing black from now on
             let div = document.querySelectorAll(".innerDiv");
             for (let index = 0; index < div.length; index++) {
@@ -54,43 +58,73 @@
             }
         }
         else{
-            rainbow = true; 
+            rainbow = true;             
             console.log("rainbow" + rainbow)
             let div = document.querySelectorAll(".innerDiv");
+            // defaultValue = rainbowValue;
             for (let index = 0; index < div.length; index++) {
                 const element = div[index];
                 let random1 = Math.floor((Math.random() * 255) + 1);
                 let random2 = Math.floor((Math.random() * 255) + 1);
                 let random3 = Math.floor((Math.random() * 255) + 1);
-                let rainbowValue = `background-color: rgb(${random1}, ${random2}, ${random3})`
-                element.addEventListener("mouseover", changeColour = () => {element.style = rainbowValue})            
+                let rainbowValue = `background-color: rgb(${random1}, ${random2}, ${random3})`;                  
+                element.addEventListener("mouseover", changeColour = () => {element.style = rainbowValue;});           
+                                           
             }
+            
         }
     }
 
 //eraser mode toggle
 
     function eraserToggle(){
-        if (eraser) {
-            eraser = false; 
-            console.log("eraser:" + eraser);
-            //make a loop to make drawing black from now on
-            let div = document.querySelectorAll(".innerDiv");
-            for (let index = 0; index < div.length; index++) {
-                const element = div[index];
-                element.addEventListener("mouseover", changeColour = () => {element.style = defaultValue})            
+    
+        if (eraser) 
+        {
+            if (rainbow) 
+            {
+                eraser = false; 
+                console.log("eraser2:" + eraser);
+                //make a loop to make drawing black from now on
+                let div = document.querySelectorAll(".innerDiv");
+                for (let index = 0; index < div.length; index++) 
+                {
+                    const element = div[index];
+                    let random1 = Math.floor((Math.random() * 255) + 1);
+                    let random2 = Math.floor((Math.random() * 255) + 1);
+                    let random3 = Math.floor((Math.random() * 255) + 1);
+                    let rainbowValue = `background-color: rgb(${random1}, ${random2}, ${random3})`;                  
+                    element.addEventListener("mouseover", changeColour = () => {element.style = rainbowValue;});            
+                }
             }
-        }
-        else{
+            else
+            {
+                eraser = false; 
+                console.log("eraser2:" + eraser);
+                //make a loop to make drawing black from now on
+                let div = document.querySelectorAll(".innerDiv");
+                for (let index = 0; index < div.length; index++) 
+                {
+                    const element = div[index];
+                    element.addEventListener("mouseover", changeColour = () => {element.style = defaultValue});            
+                }    
+            }
+        }       
+        else    
+        {
             eraser = true; 
-            console.log("eraser" + eraser)
+            console.log("eraser3" + eraser)
             let div = document.querySelectorAll(".innerDiv");
-            for (let index = 0; index < div.length; index++) {
+            for (let index = 0; index < div.length; index++) 
+            {
                 const element = div[index];
-                element.addEventListener("mouseover", changeColour = () => {element.style = eraserValue})            
+                element.addEventListener("mouseover", changeColour = () => {element.style = eraserValue;})            
             }
         }
     }
+    
+
+
 
 //initialising function
 let size = slider.value;
