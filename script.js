@@ -11,14 +11,17 @@
     let eraserValue = `background-color: rgb(216, 212, 212);`
     let eraser = false;
 
+   
+
     
 
 
 //event listeners
     document.getElementById("restart").addEventListener("click", resetPage = () => {window.location.reload();});
-    document.getElementById("rainbowPick").addEventListener("click", rainbowToggle)
-    document.getElementById("eraserPick").addEventListener("click", eraserToggle)
-    // document.getElementById("colorPick").addEventListener("")
+    document.getElementById("rainbowPick").addEventListener("click", rainbowToggle);
+    document.getElementById("eraserPick").addEventListener("click", eraserToggle);
+    document.getElementById("colorPick").addEventListener("input" , changeBrush);
+    
 
 
 //Function to create the drawing screen
@@ -26,7 +29,7 @@
     function createGrid(rows, columns){
         // Updates CSS variables for columns/rows
         container.style.setProperty("--grid-rows", rows);
-        container.style.setProperty("--grid-cols", columns)
+        container.style.setProperty("--grid-cols", columns);
         // Loop to create rows/columns and attach to the grid container
         for (let index = 0; index < (rows*columns); index++) {
             let element = document.createElement("DIV");    
@@ -135,25 +138,27 @@ let size = slider.value;
 createGrid(size, size)
 
 
-//need a function to determine if background colour = ==== "backgroundColor: ""
-//and then change defaultColour to those that are not allocated a background color
-//to what is chosen from color wheel
-//use a loop to go through each chile of the container and if their background color is blank
-//then reset their changecolour function to the new colour from the picker
 
-// function changeBrush()
-// {
-    
-//     // Loop to create rows/columns and attach to the grid container
-//     for (let index = 0; index < (rows*columns); index++) 
-//     {
-//         backgroundValue = 'backgroundColor: ""';
-//         if (condition) {
-            
-//         }
-//         let element = document.createElement("DIV");    
-//         element.setAttribute("class", "innerDiv");
-//         element.addEventListener("mouseover", changeColour = () => {element.style = defaultValue})            
-//         container.appendChild(element);    
-//     }
-// }
+//working better but still overrides previously coloured squares
+
+ function changeBrush()
+{    
+    //get each div in an array
+    let div = document.querySelectorAll(".innerDiv");
+    //go through each element and see if its background colour is blank
+    for (let index = 0; index < div.length; index++) 
+    {    
+    //if it is, change it to the new colour picker value on hover
+    if (div[index].style.background == "") 
+    {
+    let brush = document.getElementById("colorPick").value;
+    defaultValue = `background-color: ${brush};`
+    div[index].addEventListener("mouseover", changeColour = () => {div[index].style = defaultValue})                  
+    console.log("background blank")
+    }
+    //otherwise, leave it as is  
+    else{
+        console.log("as is");
+    }
+    }
+ }
