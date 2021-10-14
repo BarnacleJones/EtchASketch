@@ -35,7 +35,8 @@
             let element = document.createElement("DIV");    
             element.setAttribute("class", "innerDiv");
             element.addEventListener("mouseover", changeColour = () => {element.style = defaultValue})  
-            element.addEventListener("touchmove", changeColour = () => {element.style = defaultValue})           
+            element.addEventListener("touchstart", changeColour = () => {element.style = defaultValue})       
+            element.addEventListener("touchmove", changeColour = () => {element.style = defaultValue})      
             container.appendChild(element);    
         }
         
