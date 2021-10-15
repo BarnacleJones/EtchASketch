@@ -1,8 +1,8 @@
 /* Make a variable for rows and columns */
 /* root applies this globally to document*/
 :root{
---grid-cols: 1;
---grid-rows: 1;
+    --grid-cols: 1;
+    --grid-rows: 1;
 }
 
 body{
@@ -12,28 +12,28 @@ body{
     text-align: center; 
     font-family: 'Shrikhand';
     margin: 0;;
-    }
+}
 h1{
     font-size: 3em;
     color: rgb(161, 211, 85);
 }
-
+h2{
+    font-size: 2em;
+    color: rgb(161, 211, 85);  
+  }
 .container{
-display: grid;
-grid-template-columns: repeat(var(--grid-cols), 1fr);
-grid-template-rows: repeat(var(--grid-cols), 1fr);   
-height: 500px;
-width: 500px;
-border: 1px black solid;
-background-color: rgb(216, 212, 212);
-margin:auto
-
+    display: grid;
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+    grid-template-rows: repeat(var(--grid-cols), 1fr);   
+    height: 500px;
+    width: 500px;
+    border: 1px black solid;
+    background-color: rgb(216, 212, 212);
+    margin:auto
 }
-
 label{
     color: rgb(161, 211, 85);
 }
-
 .calculator{
     background-color: grey;
     opacity: .85;
@@ -42,7 +42,6 @@ label{
     /* height: 100vh; */
     align-items: center; 
 }
-
 .settings > button{
     width: 30%;
     border-radius: 0%;
@@ -54,30 +53,15 @@ label{
     color: purple;
     font-weight: 900;
 }
-
-
-
-
-h2{
-  font-size: 2em;
-  color: rgb(161, 211, 85);
-  
-}
-
-
-
 @media (max-width: 700px){
   .container{
-      width: 350px;
-      height: 350px;
-      
-  }
+    width: 350px;
+    height: 350px;      
+}
   .calculator{
-      height: 90vh;
-      width: 95%;
-      border-radius: 20px;
-      margin-bottom: 5%;
-   
-  }
- 
+    height: 90vh;
+    width: 95%;
+    border-radius: 20px;
+    margin-bottom: 5%;   
+} 
 }
