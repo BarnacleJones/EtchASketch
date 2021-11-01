@@ -44,7 +44,8 @@
         if (rainbow) {
             rainbow = false;             
             console.log("rainbow:" + rainbow);
-            let defaultValue = `background-color: black;`
+            let brush = document.getElementById("colorPick").value;
+            let defaultValue = `background-color: ${brush};`
             //make a loop to make drawing black from now on
             let div = document.querySelectorAll(".innerDiv");
             for (let index = 0; index < div.length; index++) {
